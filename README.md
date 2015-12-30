@@ -9,13 +9,13 @@ http://arnab.ch/blog/2013/08/asynchronous-http-requests-in-android-using-volley/
 
 #How to use it.
 ###1. In AndroidManifest.xml add the VolleyHelperApplication
-
+``` xml
 <application
 android:name="xiaohui.volley.VolleyHelperApplication"
 ...
 </application>
-
-#Example:
+```
+#2. Example:
 ## StringRequest - HTTP/GET
 private void stringRequestGetHttpExample(){
 
@@ -142,7 +142,14 @@ private void stringRequestGetHttpExample(){
                 } )
                 .requestJsonArray();
     }
-
+#3. Using Self Certified SSL
+1. Replace the certificates client.key.p12 and client.truststore with our own certificates in folder assets
+2. Configure the CertificateConfig.java
+2. Then use the following method to send the request.
+VolleyDataRequester.withSelfCertifiedHttps( this )
+                .setUrl( You_url)
+                .setJsonResponseListener( new YouJsonRequestListener ())
+                .requestJson();
 
 ![Alt text](https://raw.githubusercontent.com/yuxiaohui78/volleyHttps/master/snapshoot/app.png "Home page")
 
