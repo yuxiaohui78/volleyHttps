@@ -17,6 +17,7 @@ android:name="xiaohui.volley.VolleyHelperApplication"
 ```
 #2. Example:
 ## StringRequest - HTTP/GET
+``` groovy
 private void stringRequestGetHttpExample(){
 
         VolleyDataRequester.withHttp( this )
@@ -31,8 +32,10 @@ private void stringRequestGetHttpExample(){
                 } )
                 .requestString();
     }
-    
+```
+
 ##StringRequst HTTP/POST
+``` groovy
     private void stringRequestPostHttpExample(){
 
         HashMap<String, String> body = new HashMap <String, String>() ;
@@ -52,7 +55,9 @@ private void stringRequestGetHttpExample(){
                 } )
                 .requestString();
     }
+```    
 ##JsonRequest HTTPS/GET
+``` groovy
     private void jsonRequestGetHttpsExample(){
         VolleyDataRequester.withDefaultHttps( this )
                 .setUrl(HTTPS_HOST + IP)
@@ -77,7 +82,9 @@ private void stringRequestGetHttpExample(){
                 } )
                 .requestJson();
     }
+```
 ##JsonRequest HTTP/POST
+``` groovy
     private void jsonRequestPostHttpsExample(){
         JSONObject json = new JSONObject(  );
         try{
@@ -112,7 +119,9 @@ private void stringRequestGetHttpExample(){
                 } )
                 .requestJson();
     }
+```
 ##JsonArrayRequest HTTP/GET
+``` groovy
     private void jsonArrayRequestGetHttpsExample(){
         VolleyDataRequester.withDefaultHttps( this )
                 .setUrl(HTTPS_JSONARRAY)
@@ -142,15 +151,18 @@ private void stringRequestGetHttpExample(){
                 } )
                 .requestJsonArray();
     }
+```
 #3. Using Self Certified SSL
+
 1. Replace the certificates client.key.p12 and client.truststore with our own certificates in folder assets
 2. Configure the CertificateConfig.java
 2. Then use the following method to send the request.
+``` groovy
 VolleyDataRequester.withSelfCertifiedHttps( this )
                 .setUrl( You_url)
                 .setJsonResponseListener( new YouJsonRequestListener ())
                 .requestJson();
-
+```
 ![Alt text](https://raw.githubusercontent.com/yuxiaohui78/volleyHttps/master/snapshoot/app.png "Home page")
 
 Reference:
