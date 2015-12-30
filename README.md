@@ -15,6 +15,12 @@ android:name="xiaohui.volley.VolleyHelperApplication"
 ...
 </application>
 ```
+In build.gradle
+``` groovy
+dependencies {
+ compile 'com.mcxiaoke.volley:library:1.0.19'
+ }
+```
 #2. Example:
 ## StringRequest - HTTP/GET
 ``` groovy
