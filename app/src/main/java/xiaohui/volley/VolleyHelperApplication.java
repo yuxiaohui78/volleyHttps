@@ -68,11 +68,7 @@ public class VolleyHelperApplication extends Application {
 
             mRequestQueueWithDefaultSsl = queue;  //Volley.newRequestQueue(getApplicationContext());
 
-            HttpsURLConnection.setDefaultHostnameVerifier( new HostnameVerifier() {
-                public boolean verify(String hostName, SSLSession ssls) {
-                    return true;
-                }
-            } );
+            SSLCertificateValidation.trustAllCertificate();
         }
 
         return mRequestQueueWithDefaultSsl;
